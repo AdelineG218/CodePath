@@ -81,7 +81,7 @@ const Board = () => {
         },
         {
             "name": "Thunderbolts*",
-            "release-date": "May 2, 2025",
+            "date": "May 2, 2025",
             "rating": "PG-13",
             "genre": "Action",
             "popularity": 93,
@@ -99,7 +99,7 @@ const Board = () => {
                     rating={m.rating} 
                     popularity={m.popularity} 
                     genre={m.genre}
-                    release-date={m.date}
+                    releaseDate={m.date}
                 />
             ))}
         </div>

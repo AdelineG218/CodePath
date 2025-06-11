@@ -1,11 +1,13 @@
 const Movie = (props) => {
     return (
-        <div className={"Movie-Card" + props.genre}>
-            <h4>{props.name}</h4>
-            <div className="Movie-Nums">
-                <p>{props.popularity}</p>
-                <p>{props.rating}</p>
+        <div className={"MovieCard " + props.genre}>
+            <div className="MovieTop"></div>
+            <div className="MovieBody">
+                <h4>{props.name}</h4>
+                <p>{props.popularity}%   |  {props.rating}   |  {props.genre}</p>
+                <p>{props.releaseDate}</p>
             </div>
+            <div className="MovieBottom"></div>
         </div>
     )
 }
