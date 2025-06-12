@@ -29,7 +29,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-![hippo](https://submissions.us-east-1.linodeobjects.com/web102/rcKSO599.gif)
+<img src='demo.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
 GIF created with Windows Screen Recording and CodePath tool
 
