@@ -29,7 +29,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='/src/assets/movie-community-board.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![til](/src/assets/movie-community-board.gif)
 
 GIF created with Windows Screen Recording and CodePath tool
 
