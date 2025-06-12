@@ -29,7 +29,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-![til](/src/assets/movie-community-board.gif)
+![hippo](https://submissions.us-east-1.linodeobjects.com/web102/rcKSO599.gif)
 
 GIF created with Windows Screen Recording and CodePath tool
 
