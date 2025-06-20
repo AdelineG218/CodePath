@@ -3,7 +3,7 @@ import './App.css'
 
 const App = () => {
   const [index, setIndex] = useState(0);
-  const [currentCard, setCurrent] = useState(["to know", ["认识", "rèn shi"]]);
+  const [currentCard, setCurrent] = useState(["to love", ["爱", "ài"]]);
   const [currentLevel, setLevel] = useState(0);
   const [currentSide, setSide] = useState(0);
 
@@ -615,33 +615,32 @@ const App = () => {
   }];
   const dataKeys = Object.keys(data[0]).concat(Object.keys(data[1])).concat(Object.keys(data[2]));
 
-  const updateCardInfo = () => {
+  const updateCardInfo = (i) => {
     let idx = 2;
 
-    if (index < 150) idx = 0;
-    else if (index < 300) idx = 1;
+    if (i < 150) idx = 0;
+    else if (i < 300) idx = 1;
     setLevel(idx);
     setSide(0);
-    setCurrent([dataKeys[index], data[idx][dataKeys[index]]]);
+    setCurrent([dataKeys[i], data[idx][dataKeys[i]]]);
   };
 
-  const goToNext = () => {
-    if (index < dataKeys.length-1) {
-      setIndex(index+1);
-      console.log("index increased");
-    } else {
-      setIndex(0);
+  const goToNext = async () => {
+    let newIndex = index+1;
+    if (index >= dataKeys.length-1) {
+      newIndex = 0;
     }
-    updateCardInfo();
+    setIndex(newIndex);
+    updateCardInfo(newIndex);
   };
 
   const goToPrev = () => {
-    if (index > 0) {
-      setIndex(index-1);
-    } else {
-      setIndex(dataKeys.length-1);
+    let newIndex = index-1;
+    if (index <= 0) {
+      newIndex = dataKeys.length-1;
     }
-    updateCardInfo();
+    setIndex(newIndex);
+    updateCardInfo(newIndex);
   };
 
   const flipCard = () => {
@@ -657,11 +656,11 @@ const App = () => {
       {/* <p>{dataKeys}</p> */}
       <div className="flashcard" onClick={flipCard}>
         <div className={`flashcard-inner ${currentSide == 1 ? 'flipped' : ''}`}>
-          <div className={`flashcard-front`}>
+          <div className={`flashcard-front HSK${currentLevel+1}`}>
             <p><strong>{currentCard[0]}</strong></p>
             <p>HSK {currentLevel + 1}</p>
           </div>
-          <div className={`flashcard-back`}>
+          <div className={`flashcard-back HSK${currentLevel+1}`}>
             <p><strong>{currentCard[1][0]}</strong> ({currentCard[1][1]})</p>
           </div>
         </div>

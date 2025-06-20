@@ -4,7 +4,7 @@ Submitted by: **Adeline Greene**
 
 This web app: **shows Mandarin Chinese words and their definitions in a flashcard format**
 
-Time spent: **2.5** hours spent in total
+Time spent: **3.5** hours spent in total
 
 ## Required Features
 
@@ -28,7 +28,7 @@ The following **optional** features are implemented:
 
 - [ ] Cards contain images in addition to or in place of text
   - [ ] Some or all cards have images in place of or in addition to text
-- [ ] Cards have different visual styles such as color based on their category
+- [x] Cards have different visual styles such as color based on their category
   - Example categories you can use:
     - Difficulty: Easy/medium/hard
     - Subject: Biology/Chemistry/Physics/Earth science
@@ -37,13 +37,15 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='demo.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
-GIF created with ...  
+GIF created with Windows Screen Recording and CodePath tool
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I found the flipping animation was difficult to create, even with the provided guide in the resources. Luckily, the same strategy of using variables to assign classNames works to color the flashcards different colors based on their level.
+
+For a while, I had difficulty with getting the index of the card shown to be correct. This is because the index is not updated automatically with the setIndex function, so my updateCardInfo function was running before the index was updated. I solved this issue by passing in a variable with the new index to both the updateCardInfo function and the setIndex function.
 
 ## License
 

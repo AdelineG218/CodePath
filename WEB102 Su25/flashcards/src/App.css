@@ -46,14 +46,14 @@
   transform: rotateX(180deg);
 }
 
-/* .HSK1 {
-  background-color: greenyellow;
+.HSK1 {
+  background-color: rgb(189, 212, 155);
 }
 
 .HSK2 {
-  background-color: yellow;
+  background-color: rgb(255, 255, 131);
 }
 
 .HSK3 {
-  background-color: orange;
-} */
+  background-color: rgb(245, 200, 118);
+}
