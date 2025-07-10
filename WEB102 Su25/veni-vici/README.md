@@ -4,7 +4,7 @@ Submitted by: **Adeline Greene**
 
 This web app: **displays random astronomy images queried from NASA's Astronomy Picture of the Day API and allows users to filter unwanted image attributes**
 
-Time spent: **3.5** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
@@ -44,13 +44,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://submissions.us-east-1.linodeobjects.com/web102/offGCXLu.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Windows Screen Recording and CodePath tool
 
 ## Notes
 
-I was having difficulty getting the buttons displayed onto the Ban List. Ultimately, I realized that I had to pass the handleBanClick function into the call to BanList.
+The bulk of the time was spent figuring out how to use the NASA API, including making the API call, dealing with malformed API results, and using json results. I also had difficulty getting the buttons displayed onto the Ban List, but I soon realized I had to pass a function into the BanList component call, similar to using APICall component.
 
 ## License
 
