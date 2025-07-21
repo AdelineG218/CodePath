@@ -41,7 +41,6 @@ Here's a walkthrough of implemented required features:
 <img src='public/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Windows Screen Recording tool and ezgif tool
-GIF shared with Jumpshare
 
 ## Notes
 
