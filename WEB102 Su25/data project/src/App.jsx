@@ -4,6 +4,7 @@ import "./App.css";
 
 function App() {
   const [list, setList] = useState(null);
+  const [count, setCount] = useState(0);
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
@@ -13,7 +14,8 @@ function App() {
       const response = await fetch(
         `https://min-api.cryptocompare.com/data/all/coinlist?&api_key=${ACCESS_KEY}`
       );
-      let json = await response.json();
+      const json = await response.json();
+      setCount(Object.entries(json.Data).length);
       setList(json);
     };
     fetchAllData().catch(console.error);
@@ -40,9 +42,7 @@ function App() {
 
       <h3>Summary Statistics</h3>
       <div className="Summary">
-        <p>Average Health Score</p>
-        <p>Average Spoonacular Score</p>
-        <p>Average Price Per Serving</p>
+        <p>Number of Cryptocurrencies: {count}</p>
       </div>
 
       <input
@@ -52,7 +52,7 @@ function App() {
       />
       <ul>
         {searchInput.length > 0 ? filteredResults
-          .slice(0,10).map((coin) => {
+          .map((coin) => {
             const coinData = list.Data[coin]
             if (
               coinData.IsTrading &&
@@ -77,7 +77,7 @@ function App() {
             coinData.Algorithm !== "N/A" &&
             coinData.ProofType !== "N/A"
           )
-          .slice(0, 10).map(([coin, ]) => (
+          .map(([coin, ]) => (
             <CoinInfo
               key={coin}
               image={list.Data[coin].ImageUrl}

@@ -8,7 +8,7 @@ const CoinInfo = ({image, name, symbol}) => {
         const getCoinPrice = async () => {
             try {
                 const response = await fetch(
-    `https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=USD`
+    `https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=USD$api_key=${ACCESS_KEY}`
                 );
 
                 const json = await response.json();
