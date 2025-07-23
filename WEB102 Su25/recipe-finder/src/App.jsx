@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 // could have chart showing bar chart of the number of steps
@@ -27,11 +28,11 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      let response = await fetch("https://api.spoonacular.com/recipes/random?number=1&includeNutrition=false&apiKey=" + API_KEY);
-      let json = await response.json();
+      const response = await fetch("https://api.spoonacular.com/recipes/random?number=1&includeNutrition=false&apiKey=" + API_KEY);
+      const json = await response.json();
       console.log(json.recipes);
       setList(json.recipes);
-      calculateAverages(json.recipes); 
+      calculateAverages(json.recipes);
     }
     fetchData().catch(console.error);
   }, []);
@@ -101,7 +102,7 @@ function App() {
       ))}
       <ul className='recipe-list'>
         {searchInput.length > 0 ?
-          filteredResults?.map(recipe => (
+          filteredResults?.map((recipe) => (
             <div className="recipe-item" key={recipe.id}>
               <div className="recipe-info-top">
                 <h3>{recipe.title}</h3>
@@ -110,12 +111,12 @@ function App() {
                 {recipe.readyInMinutes && <span> • Ready in: {recipe.readyInMinutes} min</span>}
               </div>
               <div className="recipe-info-bottom">
-                {recipe.sourceUrl && <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer">View Recipe</a>}
+                <Link style={{color: "black"}} to={`/recipeDetails/${recipe.id}`} key={recipe.id}>View Details</Link>
               </div>
             </div>
           ))
          :
-          list?.map(recipe => (
+          list?.map((recipe) => (
             <div className="recipe-item" key={recipe.id}>
               <h3>{recipe.title}</h3>
               <div className="recipe-info-top">
@@ -124,6 +125,7 @@ function App() {
                 {recipe.readyInMinutes && <span> • Ready in: {recipe.readyInMinutes} min</span>}
               </div>
               <div className="recipe-info-bottom">
+                <Link style={{color: "black"}} to={`/recipeDetails/${recipe.id}`} key={recipe.id}>View Details</Link>
                 {recipe.sourceUrl && <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer">View Recipe</a>}
               </div>
             </div>
