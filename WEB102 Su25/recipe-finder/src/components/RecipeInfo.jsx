@@ -22,9 +22,9 @@ function RecipeInfo(/*{name, healthScore, prepTime, servings}*/) {
 
   return (
     <div>
-        {info?
+        {info ?
         <div>
-            <img src={info.image} alt={info.title} />
+            <img className="large-pic" src={info.image} alt={info.title} />
             <h2>{info.title}</h2>
             <span>Health Score: {info.healthScore} • Servings: {info.servings} • Ready in: {info.readyInMinutes} min{info.preparationMinutes && ` • Prep Time: ${info.preparationMinutes} min`}{info.preparationMinutes && ` • Cook Time: ${info.cookingMinutes} min`}</span>
             <div className="tags">
@@ -51,9 +51,6 @@ function RecipeInfo(/*{name, healthScore, prepTime, servings}*/) {
         </div>
         :
         <div>
-            <h1>Uh oh...</h1>
-            <h3>We couldn't find that recipe.</h3>
-            <Link to="/">Return Home</Link>
         </div>}
         
     </div>

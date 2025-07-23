@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://api.spoonacular.com/recipes/random?number=1&includeNutrition=false&apiKey=" + API_KEY);
+      const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&includeNutrition=false&apiKey=${API_KEY}`);
       const json = await response.json();
       console.log(json.recipes);
       setList(json.recipes);
@@ -74,32 +74,30 @@ function App() {
 
   return (
     <div className="whole-page">
-      <h1>Recipe Finder</h1>
-      <p>Find new and unique recipes! 😋🥘</p>
-
       <div className='summary'>
         <h3>Summary Statistics</h3>
         <p>Average Health Score: {averages[0]}</p>
         <p>Ready in an Average of {averages[1]} Minutes</p>
         <p>Makes an Average of {averages[2]} Servings</p>
       </div>
-
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={(inputString) => searchItems(inputString.target.value)}
-      />
-      {labels.map((l) => (
-        <label key={l.id}>
-          <input
-            type="checkbox"
-            value={l.id}
-            checked={selectedLabels[l.id-3]}
-            onChange={handleCheckboxChange}
-          />
-          {l.label}
-        </label>
-      ))}
+      <div className='inputs'>
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={(inputString) => searchItems(inputString.target.value)}
+        />
+        {labels.map((l) => (
+          <label key={l.id}>
+            <input
+              type="checkbox"
+              value={l.id}
+              checked={selectedLabels[l.id-3]}
+              onChange={handleCheckboxChange}
+            />
+            {l.label}
+          </label>
+        ))}
+      </div>
       <ul className='recipe-list'>
         {searchInput.length > 0 ?
           filteredResults?.map((recipe) => (
@@ -111,7 +109,7 @@ function App() {
                 {recipe.readyInMinutes && <span> • Ready in: {recipe.readyInMinutes} min</span>}
               </div>
               <div className="recipe-info-bottom">
-                <Link style={{color: "black"}} to={`/recipeDetails/${recipe.id}`} key={recipe.id}>View Details</Link>
+                <Link to={`/recipeDetails/${recipe.id}`} key={recipe.id}>View Details</Link>
               </div>
             </div>
           ))
@@ -125,8 +123,8 @@ function App() {
                 {recipe.readyInMinutes && <span> • Ready in: {recipe.readyInMinutes} min</span>}
               </div>
               <div className="recipe-info-bottom">
-                <Link style={{color: "black"}} to={`/recipeDetails/${recipe.id}`} key={recipe.id}>View Details</Link>
-                {recipe.sourceUrl && <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer">View Recipe</a>}
+                <Link to={`/recipeDetails/${recipe.id}`} key={recipe.id}>View Details</Link>
+                {/* {recipe.sourceUrl && <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer">View Recipe</a>} */}
               </div>
             </div>
           ))
