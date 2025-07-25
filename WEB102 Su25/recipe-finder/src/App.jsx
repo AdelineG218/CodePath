@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, PureComponent } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import { Link } from 'react-router-dom';
 import './App.css';
 
@@ -13,6 +14,8 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [selectedLabels, setSelectedLabels] = useState([false, false, false, false, false, false, false]);
   const [averages, setAverages] = useState([0, 0, 0]);
+  const [barData, updateBarData] = useState([]);
+  const [radarData, updateRadarData] = useState([]);
   const labels = [
     // {id: 0, label: "breakfast"},
     // {id: 1, label: "lunch"},
@@ -33,6 +36,7 @@ function App() {
       console.log(json.recipes);
       setList(json.recipes);
       calculateAverages(json.recipes);
+      calculateGraphData(json.recipes);
     }
     fetchData().catch(console.error);
   }, []);
@@ -49,6 +53,40 @@ function App() {
       (totalServings / totalCount),
     ]);
   };
+
+  const calculateGraphData = (data) => {
+    const l = [];
+    const d = {};
+    const l2 = [];
+    let mx = 0;
+    for (let i=0; i<data.length; i++) {
+      if (data[i].readyInMinutes) {
+        if (data[i].preparationMinutes && data[i].cookingMinutes) {
+          l.push({name: data[i].title, prepTime: data[i].preparationMinutes, cookTime: data[i].cookingMinutes});
+        } else {
+          l.push({name: data[i].title, prepTime: data[i].readyInMinutes, cookTime: 0});
+        }
+      }
+      for (let j=0; j<data[i].diets.length; j++) {
+        const temp = data[i].diets[j];
+        if (temp in d) {
+          d[temp] = d[temp]+1;
+        } else {
+          d[temp] = 1;
+        }
+        if (d[temp] > mx) {
+          mx = d[temp];
+        }
+      }
+    }
+    for (const key in d) {
+      l2.push({diet: key, v: d[key], fullMark: mx});
+    }
+    updateBarData(l);
+    updateRadarData(l2);
+    console.log(l);
+    console.log(l2);
+  }
 
   const handleCheckboxChange = (event) => {
     const labelId = event.target.value;
@@ -80,6 +118,39 @@ function App() {
         <p>Ready in an Average of {averages[1]} Minutes</p>
         <p>Makes an Average of {averages[2]} Servings</p>
       </div>
+
+      <div className='graphs'>
+        {barData.length>0 &&<BarChart
+          width={500}
+          height={400}
+          data={barData}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="prepTime" stackId="a" fill="#8cd685ff" />
+          <Bar dataKey="cookTime" stackId="a" fill="#fd9d77ff" />
+        </BarChart>}
+        <div style={{ width: 500, height: 400 }}>
+          {radarData.length>0 && <ResponsiveContainer width="100%" height="100%">
+            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
+              <PolarGrid />
+              <PolarAngleAxis dataKey="diet" />
+              <PolarRadiusAxis />
+              <Radar name="d" dataKey="v" stroke="#fd9d77ff" fill="#fd9d77ff" fillOpacity={0.6} />
+            </RadarChart>
+          </ResponsiveContainer>}
+        </div>
+      </div>
+
       <div className='inputs'>
         <input
           type="text"

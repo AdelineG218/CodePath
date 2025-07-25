@@ -26,7 +26,7 @@ function RecipeInfo(/*{name, healthScore, prepTime, servings}*/) {
         <div>
             <img className="large-pic" src={info.image} alt={info.title} />
             <h2>{info.title}</h2>
-            <span>Health Score: {info.healthScore} • Servings: {info.servings} • Ready in: {info.readyInMinutes} min{info.preparationMinutes && ` • Prep Time: ${info.preparationMinutes} min`}{info.preparationMinutes && ` • Cook Time: ${info.cookingMinutes} min`}</span>
+            <span>Health Score: {info.healthScore} • Servings: {info.servings} • Ready in: {info.readyInMinutes} min{info.preparationMinutes && ` • Prep Time: ${info.preparationMinutes} min`}{info.cookingMinutes && ` • Cook Time: ${info.cookingMinutes} min`}</span>
             <div className="tags">
                 {tags&& tags.map((t) => (
                     <p className="tag">{t}</p>
