@@ -20,17 +20,16 @@ const EditPost = ({data}) => {
     return (
         <div>
             <form>
-                <label htmlFor="title">Title</label> <br />
-                <input type="text" id="title" name="title" value={post.title} onChange={handleChange} /><br />
+                <label htmlFor="name">Name</label> <br />
+                <input type="text" id="name" name="name" value={post.name} onChange={handleChange} /><br />
                 <br/>
 
-                <label htmlFor="author">Author</label><br />
-                <input type="text" id="author" name="author" value={post.author} onChange={handleChange} /><br />
+                <label htmlFor="speed">Speed Level</label><br />
+                <input type="text" id="speed" name="speed" value={post.speed} onChange={handleChange} /><br />
                 <br/>
 
-                <label htmlFor="description">Description</label><br />
-                <textarea rows="5" cols="50" id="description" name="description" value={post.description} onChange={handleChange} >
-                </textarea>
+                <label htmlFor="strength">Strength Level</label><br />
+                <input type="text" id="strength" name="strength" value={post.strength} onChange={handleChange} /><br />
                 <br/>
                 <input type="submit" value="Submit" />
                 <button className="deleteButton">Delete</button>

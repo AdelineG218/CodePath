@@ -19,11 +19,11 @@ const ReadPosts = (props) => {
                     <Card 
                         key={post.id}
                         id={post.id} 
-                        title={post.title}
-                        author={post.author}
-                        description={post.description}
+                        name={post.name}
+                        speed={post.speed}
+                        strength={post.strength}
                     />
-                ) : <h2>{'No Challenges Yet 😞'}</h2>
+                ) : <h2>{'No Crewmates Yet 😞'}</h2>
             }
         </div>  
     )
