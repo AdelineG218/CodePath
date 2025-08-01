@@ -45,7 +45,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='demo.gif' title='Video Walkthrough' alt='Video Walkthrough' />
+<img src='public/demo.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
 GIF created with Windows Screen Recording and CodePath tool
 
