@@ -43,7 +43,7 @@ function App() {
 
   const calculateAverages = (data) => {
     const totalCount = data.length;
-    const totalHealth = data.reduce((sum, item) => (item.healthScore || 0), 0);;
+    const totalHealth = data.reduce((sum, item) => (item.healthScore || 0), 0);
     const totalTime = data.reduce((sum, item) => (item.readyInMinutes || 0), 0);
     const totalServings = data.reduce((sum, item) => sum + (item.servings || 0), 0);
 

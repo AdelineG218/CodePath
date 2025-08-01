@@ -38,3 +38,25 @@ input[type=submit] {
 input[type=submit]:hover {
     border-color: #646cff;
 }
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    align-content: left;
+    padding-right: 10px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.check {
+    display: flex;
+    justify-content: space-between;
+}

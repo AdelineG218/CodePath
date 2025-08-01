@@ -4,43 +4,28 @@ import { useRoutes } from 'react-router-dom'
 import ReadPosts from './pages/ReadPosts'
 import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
+import Post from './pages/Post'
 import { Link } from 'react-router-dom'
 
 
 const App = () => {
-  const crewmates = [
-      {'id':'1', 
-      'name': 'George',
-      'speed': '5', 
-      'strength': '8'},
-      {'id':'2', 
-      'name': 'Larry',
-      'speed': '1', 
-      'strength': '10'},
-      {'id':'3', 
-      'name': 'Samantha',
-      'speed': '6', 
-      'strength': '4'},
-      {'id':'4', 
-      'name': 'Patricia',
-      'speed': '7', 
-      'strength': '7'},
-  ]
 
-
-  // Sets up routes
   let element = useRoutes([
     {
       path: "/",
-      element:<ReadPosts data={crewmates}/>
+      element:<ReadPosts />
     },
     {
       path:"/edit/:id",
-      element: <EditPost data={crewmates} />
+      element: <EditPost />
     },
     {
       path:"/new",
       element: <CreatePost />
+    },
+    {
+      path:"/crewmate/:id",
+      element: <Post />
     }
   ]);
 
