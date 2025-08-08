@@ -4,7 +4,7 @@ function Layout () {
   return (
     <div>
         <nav>
-            <h1>Builder Hub</h1>
+            <Link to={'/'}><h1>Builder Hub</h1></Link>
         </nav>
         <main className="content">
             <Outlet />
