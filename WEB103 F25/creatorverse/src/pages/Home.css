@@ -1,0 +1,15 @@
+.Cards {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.empty {
+    font-size: calc(10px + 2vmin);
+}
+
+h2 {
+    font-family: Sono;
+}
