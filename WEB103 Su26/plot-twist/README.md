@@ -28,7 +28,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='public/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='client/public/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Windows Screen Recording Tool (windows + shift + r)
 
