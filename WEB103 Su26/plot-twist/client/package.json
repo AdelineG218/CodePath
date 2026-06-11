@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.1.1"
   }
 }

@@ -1,11 +1,42 @@
-/* Root Styles CSS */
+:root {
+    --pico-primary: rgb(3, 7, 89);
+    --pico-primary-hover: rgb(20, 30, 120);
+}
+
+#main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.story-info {
+    display: flex;
+    justify-content: center;
+}
+
+.story-details {
+    max-width: 700px;
+    width: 100%;
+}
+
+
 :root {
     background-color: white;
     font-family: Avenir, Helvetica, sans-serif;
     color: black;
 }
 
-/* Header CSS */
+
 .header-container {
     overflow: hidden;
     padding: 20px 10px;
@@ -35,7 +66,7 @@
     padding-right:10px;
 }
 
-.header-right button {
+/* .header-right button {
   background-color: white;
   border: solid;
   border-width: 3px;
@@ -50,18 +81,16 @@
   text-transform: uppercase;
   touch-action: manipulation;
   width: 80px;
-}
+} */
 
-/* Home page CSS */
-
-main {
+/* main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
     padding: 20px;
-}
+} */
 
 .card {
     width: 300px;
@@ -93,7 +122,6 @@ main {
 }
 
 .card-container a {
-    color: rgb(228, 16, 133);
     text-decoration: none;
     font-weight: bold;
 }
@@ -101,8 +129,6 @@ main {
 .card-container a:hover {
     text-decoration: underline;
 }
-
-/* Story Detail Page */
 
 .story-info {
     display: flex;

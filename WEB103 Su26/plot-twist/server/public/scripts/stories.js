@@ -5,9 +5,11 @@ const renderStories = async () => {
 
     const mainContent = document.getElementById('main-content')
 
-    if (data) {
+    if (window.location.href.split('/').pop()) {
+        window.location.href = '../404.html'
+    } else if (data) {
         data.map(story => {
-            const card = document.createElement('div')
+            const card = document.createElement('article')
             card.classList.add('card')
 
             const cardContainer = document.createElement('div')
@@ -37,7 +39,7 @@ const renderStories = async () => {
     } else {
         const message = document.createElement('h2')
         message.textContent = 'No Stories Available 😞'
-        mainContent.appendChild(message) 
+        storyContent.appendChild(message) 
     }
 }
 

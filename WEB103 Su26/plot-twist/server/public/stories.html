@@ -3,6 +3,10 @@
   <head>
     <title>Plot Twist</title>
     <link rel="icon" type="image/x-icon" href="/logo.png">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
     <link rel="stylesheet" href="/style.css">
     <script defer src="/scripts/header.js"></script>
     <script defer src="/scripts/stories.js"></script>
@@ -10,14 +14,14 @@
 
   <body>
     <header></header>
-    <main id="story-content" class="story-info">
-        <div class="story-details">
+    <main id="story-content" class="container story-info">
+        <article class="story-details">
             <h2 id="title"></h2>
             <h3 id="author"></h3>
             <p id="genre"></p>
             <p id="publish-year"></p>
             <p id="word-count"></p>
-        </div>
+        </article>
     </main>
   </body>
 
