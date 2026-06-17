@@ -3,6 +3,9 @@ import { pool } from './database.js'
 import storyData from '../data/stories.js'
 
 const createStoriesTable = async () => {
+    console.log('PGHOST:', process.env.PGHOST)
+    console.log('PGDATABASE:', process.env.PGDATABASE)
+
     try {
         const result = await pool.query('SELECT NOW()')
         console.log('Connected successfully!')
