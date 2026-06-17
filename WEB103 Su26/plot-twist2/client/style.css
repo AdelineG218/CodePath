@@ -1,0 +1,175 @@
+:root {
+    --pico-primary: rgb(3, 7, 89);
+    --pico-primary-hover: rgb(20, 30, 120);
+}
+
+#main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.story-info {
+    display: flex;
+    justify-content: center;
+}
+
+.story-details {
+    max-width: 700px;
+    width: 100%;
+}
+
+
+:root {
+    background-color: white;
+    font-family: Avenir, Helvetica, sans-serif;
+    color: black;
+}
+
+
+.header-container {
+    overflow: hidden;
+    padding: 20px 10px;
+    padding-bottom: 60px;
+  }
+
+.header-left {
+    float: left;
+    height: 100px;
+    width: 310px;
+}
+
+.header-left img {
+    padding-top: 8px;
+    height: 80px;
+}
+
+.header-left h1 {
+    float: right;
+    font-size: 45px;
+    
+}
+
+.header-right {
+    float: right;
+    padding-top:30px;
+    padding-right:10px;
+}
+
+/* .header-right button {
+  background-color: white;
+  border: solid;
+  border-width: 3px;
+  border-color: rgb(3, 7, 89);
+  border-radius: 0.1rem;
+  border-radius: 16px;
+  box-sizing: border-box;
+  color:  rgb(3, 7, 89);
+  cursor: pointer;
+  padding: 15px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  width: 80px;
+} */
+
+/* main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px;
+} */
+
+.card {
+    width: 300px;
+    min-height: 220px;
+    border: 3px solid rgb(3, 7, 89);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+
+.card-container {
+    padding: 20px;
+}
+
+.card-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: rgb(3, 7, 89);
+}
+
+.card-container h3 {
+    margin-bottom: 16px;
+    font-weight: normal;
+    color: #555;
+}
+
+.card-container p {
+    margin-bottom: 20px;
+}
+
+.card-container a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-container a:hover {
+    text-decoration: underline;
+}
+
+.story-info {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.story-details {
+    width: 700px;
+    border: 3px solid rgb(3, 7, 89);
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.057);
+    padding: 30px;
+}
+
+.story-details h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: rgb(3, 7, 89);
+    font-size: 2.5rem;
+}
+
+.story-details h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #555;
+    font-weight: normal;
+}
+
+.story-details p {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#genre,
+#publish-year,
+#word-count {
+    padding: 12px;
+    margin: 10px 0;
+    background-color: rgba(3, 7, 89, 0.05);
+    border-radius: 8px;
+}
