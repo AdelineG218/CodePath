@@ -13,32 +13,32 @@ const App = () => {
       element: <Locations />
     },
     {
-      path: '/echolounge',
+      path: '/denver',
       element: <LocationEvents index={1} />
     },
     {
-      path: '/houseofblues',
+      path: '/boulder',
       element: <LocationEvents index={2} />
     },
     {
-      path: '/pavilion',
+      path: '/fort-collins',
       element: <LocationEvents index={3} />
     },
     {
-      path: '/americanairlines',
+      path: '/colorado-springs',
       element: <LocationEvents index={4} />
-    },
-    {
-      path: '/events',
-      element: <Events />
     }
+    // {
+    //   path: '/events',
+    //   element: <Events />
+    // }
   ])
 
   return (
     <div className='app'>
 
       <header className='main-header'>
-        <h1>UnityGrid Plaza</h1>
+        <h1>Co Design</h1>
 
         <div className='header-buttons'>
           <Link to='/' role='button'>Home</Link>
