@@ -1,42 +1,35 @@
 .event-information {
-    position: relative;
     width: 350px;
-    height: 350px;
-    padding: 0px;
+    min-height: 250px;
     margin: 20px;
     border: 2px solid white;
-    border-radius: 0px;
+    border-radius: 12px;
+    background-color: var(--primary);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.event-information img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.event-information:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .event-information-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    right: 0;
-    background-color: var(--primary);
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: 0.5s ease;
-}
-
-.event-information:hover .event-information-overlay {
     width: 100%;
-    left: 0;
+    height: 100%;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
 .text {
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.text h3 {
+    color: white;
+    margin-bottom: 16px;
 }
 
 .text i {
@@ -45,13 +38,24 @@
 
 .text p {
     color: white;
-    margin-top: 10px;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
-.negative-time-remaining {
+.event-upcoming {
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.event-passed {
+    margin-top: auto;
     background-color: red;
     color: white;
     font-weight: 700;
     padding: 10px;
+    border-radius: 6px;
     text-align: center;
 }
