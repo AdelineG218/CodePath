@@ -31,7 +31,7 @@ const Event = ({ title, date, description }) => {
                     >
                         {daysRemaining < 0
                             ? `Occurred ${Math.abs(daysRemaining)} days ago`
-                            : `${daysRemaining} days remaining`}
+                            : `${daysRemaining} days until start`}
                     </p>
                 </div>
             </div>

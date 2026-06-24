@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Event from '../components/Event'
 import { getAllEvents } from '../services/EventsAPI'
+import '../css/Events.css'
 
 const Events = () => {
     const [events, setEvents] = useState([])
@@ -22,21 +23,23 @@ const Events = () => {
         <div className='all-events'>
             <h2>All Events</h2>
 
-            {
-                events.length > 0 ? (
-                    events.map(event => (
-                        <Event
-                            key={event.id}
-                            id={event.id}
-                            title={event.title}
-                            date={event.event_date}
-                            description={event.description}
-                        />
-                    ))
-                ) : (
-                    <h3>No events found.</h3>
-                )
-            }
+            <div className='events-container'>
+                {
+                    events.length > 0 ? (
+                        events.map(event => (
+                            <Event
+                                key={event.id}
+                                id={event.id}
+                                title={event.title}
+                                date={event.date}
+                                description={event.description}
+                            />
+                        ))
+                    ) : (
+                        <h3>No events found.</h3>
+                    )
+                }
+            </div>
         </div>
     )
 }

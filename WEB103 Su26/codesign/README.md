@@ -4,7 +4,7 @@ Submitted by: **Adeline Greene**
 
 About this web app: **An app that displays various tech and design events happening across the state of Colorado.**
 
-Time spent: **X** hours
+Time spent: **5** hours
 
 ## Required Features
 
@@ -15,29 +15,29 @@ The following **required** functionality is completed:
   - [x]  **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
   - [x]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 - [x] **The web app displays a title.**
-- [ ] **Website includes a visual interface that allows users to select a location they would like to view.**
-  - [ ] *Note: A non-visual list of links to different locations is insufficient.* 
-- [ ] **Each location has a detail page with its own unique URL.**
-- [ ] **Clicking on a location navigates to its corresponding detail page and displays list of all events from the `events` table associated with that location.**
+- [x] **Website includes a visual interface that allows users to select a location they would like to view.**
+  - [x] *Note: A non-visual list of links to different locations is insufficient.* 
+- [x] **Each location has a detail page with its own unique URL.**
+- [x] **Clicking on a location navigates to its corresponding detail page and displays list of all events from the `events` table associated with that location.**
 
 The following **optional** features are implemented:
 
-- [ ] An additional page shows all possible events
+- [x] An additional page shows all possible events
   - [ ] Users can sort *or* filter events by location.
-- [ ] Events display a countdown showing the time remaining before that event
-  - [ ] Events appear with different formatting when the event has passed (ex. negative time, indication the event has passed, crossed out, etc.).
+- [x] Events display a countdown showing the time remaining before that event
+  - [x] Events appear with different formatting when the event has passed (ex. negative time, indication the event has passed, crossed out, etc.).
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='/codesign/server/demo.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Windows screen recording tool (windows + shift + r)
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+This project was difficult because it was vastly different than the lab, as it combined React with the new api material and introduced a project with multiple tables.
 
 ## License
 

@@ -1,0 +1,15 @@
+.all-events {
+    padding: 2rem;
+}
+
+.all-events h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}

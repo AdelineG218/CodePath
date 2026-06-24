@@ -14,7 +14,7 @@ const eventData = [
   {
     title: "Women in Tech Networking Mixer",
     description: "Meet local professionals in software and design.",
-    event_date: "2026-08-02",
+    event_date: "2026-06-02",
     location_id: 1
   },
   {

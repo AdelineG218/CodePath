@@ -11,6 +11,7 @@ const createTables = async () => {
         id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         date TIMESTAMP NOT NULL,
+        description VARCHAR(255) NOT NULL,
         location_id VARCHAR(255) NOT NULL
     )
     `
@@ -44,12 +45,13 @@ const seedTables = async () => {
 
     for (const event of eventData) {
         const insertQuery = {
-            text: 'INSERT INTO events (title, date, location_id) VALUES ($1, $2, $3)'
+            text: 'INSERT INTO events (title, date, description, location_id) VALUES ($1, $2, $3, $4)'
         }
 
         const values = [
             event.title,
             event.event_date,
+            event.description,
             event.location_id
         ]
 
