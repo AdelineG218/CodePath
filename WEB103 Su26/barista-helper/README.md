@@ -2,7 +2,7 @@
 
 Submitted by: **Adeline Greene**
 
-About this web app: **An app that allows people to customize coffees**
+About this web app: **An app that allows people to customize coffee beverages**
 
 Time spent: **5** hours
 
@@ -25,7 +25,7 @@ The following **required** functionality is completed:
 - [x] **Users can view a list of all submitted `CustomItem`s.**
 - [x] **Users can edit a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
 - [x] **Users can delete a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
-- [x] **Users can update or delete `CustomItem`s that have been created from the detail page.**
+- [ ] **Users can update or delete `CustomItem`s that have been created from the detail page.**
 
 
 The following **optional** features are implemented:
@@ -36,9 +36,9 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='./server/public/assets/demo.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./server/public/assets/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Video created with Windows Screen Recording Tool
+GIF created with Windows Screen Recording and ezgif tool
 
 ## Notes
 
