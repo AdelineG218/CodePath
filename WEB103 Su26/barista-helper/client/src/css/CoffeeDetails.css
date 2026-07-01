@@ -1,9 +1,15 @@
 .coffee-details {
     max-width: 700px;
     margin: 40px auto;
-    text-align: center;
+    text-align: left;
+    background-color: rgb(167, 117, 98);
+    border-radius: 20px;
+    padding: 2em;
 }
 
+.coffee-details h1 {
+    color: black;
+}
 .coffee-image {
     width: 250px;
     margin: 25px 0;
@@ -12,4 +18,11 @@
 .coffee-info {
     font-size: 1.2rem;
     line-height: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.coffee-info p {
+    color: black;
 }

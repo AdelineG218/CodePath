@@ -51,15 +51,14 @@ const ViewCoffees = () => {
             {coffees.map((coffee) => (
                 <div className="coffee-card" key={coffee.id}>
 
-                    <h2>${Number(coffee.price).toFixed(2)}</h2>
+                    <h2>{coffee.size} {coffee.type} {coffee.type != "Americano" ? `with ${coffee.milk} Milk` : ""}</h2>
+                    <p>Price: ${Number(coffee.price).toFixed(2)}</p>
 
                     <img
                         src={getImage(coffee)}
                         alt={coffee.size}
                         className="coffee-image"
                     />
-
-                    <p>{coffee.size} {coffee.type} {coffee.type != "Americano" ? `with ${coffee.milk} Milk` : ""}</p>
 
                     <Link to={`/coffee/${coffee.id}`}>
                         Details
@@ -70,7 +69,10 @@ const ViewCoffees = () => {
                     </Link>
 
                     <button
-                        onClick={() => handleDelete(coffee.id)}
+                        onClick={() => {
+                            handleDelete(coffee.id)
+                            loadCoffees()
+                        }}
                     >
                         Delete
                     </button>

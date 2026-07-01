@@ -77,12 +77,21 @@ const CreateCoffee = () => {
       return;
     }
 
-    await createCoffee({
+    console.log("Submitting new coffee:", {
+        type,
+        size,
+        milk,
+        price: calculatePrice()
+    });
+
+    const response = await createCoffee({
       type,
       size,
       milk,
       price: calculatePrice()
     });
+
+    console.log("Create response: ", response)
 
     navigate("/");
   };

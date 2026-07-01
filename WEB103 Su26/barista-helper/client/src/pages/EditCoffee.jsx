@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCoffeeById, updateCoffee } from "../services/CoffeesAPI";
+
+import smallCoffee from "../assets/small.png";
+import mediumCoffee from "../assets/medium.png";
+import largeCoffee from "../assets/large.png";
 import "../css/CoffeeForm.css" 
 
 const EditCoffee = () => {
@@ -12,6 +16,8 @@ const EditCoffee = () => {
     const [type, setType] = useState("");
     const [size, setSize] = useState("");
     const [milk, setMilk] = useState("");
+    const [error, setError] = useState("");
+    
 
     useEffect(() => {
 
@@ -74,32 +80,51 @@ const EditCoffee = () => {
 
     };
 
+    const getImage = () => {
+        switch (size) {
+          case "Small":
+            return smallCoffee;
+          case "Medium":
+            return mediumCoffee;
+          case "Large":
+            return largeCoffee;
+          default:
+            return mediumCoffee;
+        }
+    };
+
     const handleSubmit = async (e) => {
 
         e.preventDefault();
 
-        if (
-            type === "Cappuccino" &&
-            size !== "Small"
-        ) {
-            alert("Cappuccinos are only available in the Small size.");
-            return;
+        setError("");
+
+        if (type === "Cappuccino" && size !== "Small") {
+        setError("Cappuccinos are only available in the small size.");
+        return;
         }
 
-        if (
-            type === "Americano" &&
-            milk !== "None"
-        ) {
-            alert("Americanos cannot contain milk.");
-            return;
+        if (type === "Americano" && milk !== "None") {
+        setError("Americanos cannot contain milk.");
+        return;
         }
 
-        await updateCoffee(id, {
+        console.log("Submitting update:", {
+            id,
             type,
             size,
             milk,
             price: calculatePrice()
         });
+
+        const response = await updateCoffee(id, {
+            type,
+            size,
+            milk,
+            price: calculatePrice()
+        });
+
+        console.log("Update response: ", response)
 
         navigate("/");
 
@@ -108,7 +133,7 @@ const EditCoffee = () => {
     return (
         <div className="coffee-form">
 
-            <h1>Create a Coffee</h1>
+            <h1>Edit a Coffee</h1>
 
             <form onSubmit={handleSubmit}>
 

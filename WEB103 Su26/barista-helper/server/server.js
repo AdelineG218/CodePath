@@ -7,12 +7,6 @@ import router from './routes/coffees.js'
 
 dotenv.config()
 
-console.log({
-  PGHOST: process.env.PGHOST,
-  PGDATABASE: process.env.PGDATABASE,
-  PGUSER: process.env.PGUSER
-});
-
 const PORT = process.env.PORT || 3000
 
 const app = express()

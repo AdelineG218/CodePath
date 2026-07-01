@@ -47,7 +47,7 @@ const updateCoffee = async (req, res) => {
       const id = parseInt(req.params.id)
       const { type, size, milk, price } = req.body
       const results = await pool.query(`
-          UPDATE coffees SET type = $1, size = $2, milk = $3, price = $4, WHERE id = $5`,
+          UPDATE coffees SET type = $1, size = $2, milk = $3, price = $4 WHERE id = $5 RETURNING *`,
           [type, size, milk, price, id]
       )
       res.status(200).json(results.rows[0])

@@ -47,30 +47,32 @@ const CoffeeDetails = () => {
   return (
     <div className="coffee-details">
 
-      <h1>{coffee.type}</h1>
+        <div className="coffee-info">
 
-      <img
-        src={getImage()}
-        alt={coffee.type}
-        className="coffee-image"
-      />
+            <div>
+                <h1>{coffee.type}</h1>
 
-      <div className="coffee-info">
+                <p>
+                <strong>Size:</strong> {coffee.size}
+                </p>
 
-        <p>
-          <strong>Size:</strong> {coffee.size}
-        </p>
+                {coffee.type != 'Americano' && <p>
+                <strong>Milk:</strong> {coffee.milk}
+                </p>}
 
-        {coffee.type != 'Americano'} : (<p>
-          <strong>Milk:</strong> {coffee.milk}
-        </p>) : ()
+                <p>
+                <strong>Price:</strong> $
+                {Number(coffee.price).toFixed(2)}
+                </p>
+            </div>
 
-        <p>
-          <strong>Price:</strong> $
-          {Number(coffee.price).toFixed(2)}
-        </p>
+            <img
+                src={getImage()}
+                alt={coffee.type}
+                className="coffee-image"
+            />
 
-      </div>
+        </div>
 
     </div>
   );
