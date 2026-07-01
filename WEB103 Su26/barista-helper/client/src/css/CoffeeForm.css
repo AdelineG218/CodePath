@@ -1,0 +1,29 @@
+.error-message {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.coffee-form {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: rgb(167, 117, 98);
+    padding: 2em;
+    border-radius: 20px;
+    color: white;
+}
+
+.coffee-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.coffee-form select {
+    background-color: white;
+    color: black;
+}
+
+.coffee-image {
+    width: 200px;
+    align-self: center;
+}

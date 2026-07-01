@@ -1,0 +1,95 @@
+.coffee-list {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.coffee-list h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #2c1a12;
+}
+
+.coffee-list p {
+  text-align: center;
+  color: #666;
+}
+
+/* GRID LAYOUT */
+.coffee-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* HEADER spans full width */
+.coffee-list h1,
+.coffee-list > p {
+  grid-column: 1 / -1;
+}
+
+/* CARD */
+.coffee-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coffee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.coffee-card h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #3b2a22;
+}
+
+/* TEXT */
+.coffee-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* PRICE emphasis */
+.coffee-card p:last-of-type {
+  font-weight: bold;
+  color: #2f1d14;
+}
+
+/* LINKS */
+.coffee-card a {
+  text-decoration: none;
+  color: #6b4f3a;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.coffee-card a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.coffee-card button {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #8b3a2a;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.coffee-card button:hover {
+  background: #6e2d21;
+}
